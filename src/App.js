@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export const App = () => {
   return (
-    <div>
+    <BrowserRouter>
+      <div>
       Find me in src/app.js!
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
