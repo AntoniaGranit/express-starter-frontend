@@ -12,12 +12,14 @@ export const App = () => {
   return (
     <BrowserRouter>
       <section>
-        <p>Hi!</p>
+        <p>Welcome to my API.</p>
         <select value={selectedLanguage} onChange={handleLanguageChange}>
           <option value="">Order by work language:</option>
           <option value="English">English</option>
           <option value="German">German</option>
           <option value="Spanish">Spanish</option>
+          <option value="Russian">Russian</option>
+          <option value="Polish">Polish</option>
         </select>
         <Link to={`/professionals/${selectedLanguage}`}>
           <button type="button" disabled={!selectedLanguage}>Show Work Language List</button>
