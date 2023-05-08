@@ -5,16 +5,18 @@ import { Loading } from './Loading';
 export const WorkLanguage = () => {
   const [languageList, setLanguageList] = useState([])
   const [loading, setLoading] = useState(false);
-  const { language } = useParams();
+  const { worklanguage } = useParams();
+
+  console.log(useParams())
 
   useEffect(() => {
     setLoading(true)
-    fetch(`https://project-express-api-wcsanbxhyq-lz.a.run.app/professionals?worklanguage=${language}`)
+    fetch(`https://project-express-api-wcsanbxhyq-lz.a.run.app/professionals?worklanguage=${worklanguage}`)
       .then((res) => res.json())
-      .then((data) => setLanguageList(data.body.professionals))
+      .then((data) => setLanguageList(data))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false))
-  }, [language]);
+  }, [worklanguage]);
 
   if (loading) {
     return (
