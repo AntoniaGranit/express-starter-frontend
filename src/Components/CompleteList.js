@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Loading } from './Loading';
+import { SingleProfessional, CategoryP } from '../Styles/SingleProfessional';
 
 export const CompleteList = () => {
   const [completeList, setCompleteList] = useState([])
@@ -24,22 +25,22 @@ export const CompleteList = () => {
     <section className="completelist-container">
       {completeList.map((singleProfessional) => {
         return (
-          <div key={singleProfessional.id}>
-            <p>Age: {singleProfessional.age}</p>
-            <p>Gender: {singleProfessional.gender}</p>
-            <p>City:{singleProfessional.city}</p>
-            <p>Position: {singleProfessional.position}</p>
-            <p>Total years of experience: {singleProfessional.total_years_experience}</p>
-            <p>Seniority level: {singleProfessional.seniority_level}</p>
-            <p>Main programming languge: {singleProfessional.main_language}</p>
-            <p>Yearly salary:{singleProfessional.yearly_salary}</p>
-            <p>Employment status: {singleProfessional.employment_status}</p>
-            <p>Contract duration: {singleProfessional.contract_duraction}</p>
-            <p>Work language: {singleProfessional.work_language}</p>
-            <p>Company size: {singleProfessional.company_size}</p>
-            <p>Company type: {singleProfessional.company_type}</p>
-            <br />
-          </div>
+          <SingleProfessional key={singleProfessional.id}>
+            <p><CategoryP>Age:</CategoryP> {singleProfessional.age}</p>
+            <p><CategoryP>Gender:</CategoryP> {singleProfessional.gender}</p>
+            <p><CategoryP>City:</CategoryP> {singleProfessional.city}</p>
+            <p><CategoryP>Position:</CategoryP> {singleProfessional.position}</p>
+            <p><CategoryP>Total years of experience: </CategoryP>
+              {singleProfessional.total_years_experience}
+            </p>
+            <p><CategoryP>Seniority level:</CategoryP> {singleProfessional.seniority_level}</p>
+            <p><CategoryP>Main language:</CategoryP> {singleProfessional.main_language}</p>
+            <p><CategoryP>Yearly salary:</CategoryP> {singleProfessional.yearly_salary}</p>
+            <p><CategoryP>Employment status:</CategoryP> {singleProfessional.employment_status}</p>
+            <p><CategoryP>Work language:</CategoryP> {singleProfessional.work_language}</p>
+            <p><CategoryP>Company size:</CategoryP> {singleProfessional.company_size}</p>
+            <p><CategoryP>Company type:</CategoryP> {singleProfessional.company_type}</p>
+          </SingleProfessional>
         )
       })}
     </section>

@@ -1,33 +1,27 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { WorkLanguage } from 'Components/WorkLanguage';
+import { Navbar } from 'Components/Navbar';
+import { CompleteList } from 'Components/CompleteList';
+import styled from 'styled-components';
+
+const MainSection = styled.section`
+width: 80%;
+margin: auto;
+color: #FC8A6B;
+font-family: "Questrial";
+padding-top: 60px;`
 
 export const App = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
-  const handleLanguageChange = (event) => {
-    console.log(event.target.value);
-    setSelectedLanguage(event.target.value);
-  }
-
   return (
     <BrowserRouter>
-      <section>
-        <p>Welcome to my API.</p>
-        <select value={selectedLanguage} onChange={handleLanguageChange}>
-          <option value="">Order by work language:</option>
-          <option value="English">English</option>
-          <option value="German">German</option>
-          <option value="Spanish">Spanish</option>
-          <option value="Russian">Russian</option>
-          <option value="Polish">Polish</option>
-        </select>
-        <Link to={`/professionals/${selectedLanguage}`}>
-          <button type="button" disabled={!selectedLanguage}>Show Work Language List</button>
-        </Link>
+      <Navbar />
+      <MainSection>
         <Routes>
           <Route path="/professionals/:worklanguage" element={<WorkLanguage />} />
+          <Route path="/completelist" element={<CompleteList />} />
         </Routes>
-      </section>
+      </MainSection>
     </BrowserRouter>
   )
 }

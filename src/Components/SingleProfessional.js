@@ -29,7 +29,7 @@ export const SingleProfessional = () => {
         <p>Position: {details.position}</p>
         <p>Total years of experience: {details.total_years_experience}</p>
         <p>Seniority level: {details.seniority_level}</p>
-        <p>Main programming languge: {details.main_language}</p>
+        <p>Main language: {details.main_language}</p>
         <p>Yearly salary: {details.yearly_salary}</p>
         <p>Employment status: {details.employment_status}</p>
         <p>Contract duration: {details.contract_duraction}</p>
