@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { WorkLanguage } from 'Components/WorkLanguage';
 import { Navbar } from 'Components/Navbar';
 import { CompleteList } from 'Components/CompleteList';
+import { GenderList } from 'Components/GenderList';
+import { Main } from 'Components/Main';
 import styled from 'styled-components';
 
 const MainSection = styled.section`
@@ -18,8 +20,10 @@ export const App = () => {
       <Navbar />
       <MainSection>
         <Routes>
+          <Route path="/" element={<Main />} />
           <Route path="/professionals/:worklanguage" element={<WorkLanguage />} />
           <Route path="/completelist" element={<CompleteList />} />
+          <Route path="/:gender" element={<GenderList />} />
         </Routes>
       </MainSection>
     </BrowserRouter>
