@@ -54,7 +54,7 @@ export const RandomProfessional = () => {
       He work at a {randomProfessional.company_type} company of about {randomProfessional.company_size} employees, and he&apos;s a {randomProfessional.employment_status}.
           </p>
         </SingleProfessional>
-        <Button type="button" onClick={refreshPage}>randomize again!</Button>
+        <Button type="button" onClick={refreshPage}>get new professional</Button>
       </section>
     );
   }
